@@ -250,8 +250,13 @@ angular.module('zeppelinWebApp')
     var data = {op: 'CANCEL_PARAGRAPH', data: {id: $scope.paragraph.id }};
     $rootScope.$emit('sendNewEvent', data);
   };
+  $scope.downloadParagraph = function(){
 
-
+    var element = document.createElement('a');
+    element.setAttribute('href', 'data:text/text;charset=utf-8,' +	encodeU$
+    element.setAttribute('download', "data.csv");
+    element.click();
+  };
   $scope.runParagraph = function(data) {
     var parapgraphData = {op: 'RUN_PARAGRAPH',
                           data: {
